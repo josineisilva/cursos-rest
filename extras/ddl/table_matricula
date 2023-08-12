@@ -1,0 +1,18 @@
+CREATE TABLE matricula (
+                       id         INTEGER       GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+                       curso_id   INTEGER       NOT NULL REFERENCES curso,
+                       aluno_id   INTEGER       NOT NULL REFERENCES aluno,
+                       data       DATE          NOT NULL,
+                       valor      NUMERIC(6,2)  NOT NULL,
+                       UNIQUE (curso_id,aluno_id)
+                       );
+CREATE INDEX matricula_curso  ON matricula ( curso_id );
+CREATE INDEX matricula_aluno  ON matricula ( aluno_id );
+CREATE INDEX matricula_data   ON matricula ( data );
+
+COMMENT ON TABLE  matricula            IS 'Cadastro de matriculas';
+COMMENT ON COLUMN matricula.id         IS 'Codigo do matricula';
+COMMENT ON COLUMN matricula.curso_id   IS 'Codigo do curso';
+COMMENT ON COLUMN matricula.aluno_id   IS 'Codigo do aluno';
+COMMENT ON COLUMN matricula.data       IS 'Data da matricula';
+COMMENT ON COLUMN matricula.valor      IS 'Valor pago pelo aluno';

@@ -1,0 +1,8 @@
+CREATE TABLE aluno (
+                   id    INTEGER  GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+                   nome  CHAR(30) NOT NULL UNIQUE
+                   );
+
+COMMENT ON TABLE  aluno       IS 'Cadastro de alunos';
+COMMENT ON COLUMN aluno.id    IS 'Codigo do aluno';
+COMMENT ON COLUMN aluno.nome  IS 'Nome do aluno';

@@ -1,0 +1,3 @@
+DROP TABLE matricula;
+DROP TABLE aluno;
+DROP TABLE curso;

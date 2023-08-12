@@ -1,0 +1,8 @@
+CREATE TABLE curso (
+                   id         INTEGER  GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+                   descricao  CHAR(20) NOT NULL UNIQUE
+                   );
+
+COMMENT ON TABLE  curso            IS 'Cadastro de cursos';
+COMMENT ON COLUMN curso.id         IS 'Codigo do curso';
+COMMENT ON COLUMN curso.descricao  IS 'Descricao do curso';
